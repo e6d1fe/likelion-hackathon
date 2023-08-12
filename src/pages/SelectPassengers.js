@@ -48,7 +48,6 @@ const SelectContainer = styled.div`
   display: flex;
   width: 300px;
   justify-content: space-between;
-  /* align-items: center; */
 `;
 
 const SelectOption = styled.p`
