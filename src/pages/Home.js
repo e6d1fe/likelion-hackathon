@@ -7,17 +7,17 @@ const PageContainer = styled.div`
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100vh;
+  background-color: #f9e45f;
 `;
 
 const MobileScreen = styled.div`
-  background-color: #f9e45f;
   width: 360px;
   height: 100%;
 `;
 
 const Container = styled.div`
   height: 100%;
-  padding: 0px 34px;
+  padding: 0px 34px 40px 34px;
   display: flex;
   flex-direction: column;
   justify-content: center;
