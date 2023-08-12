@@ -6,7 +6,7 @@ const PageContainer = styled.div`
   align-items: center;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 100vh;
+  height: 100dvh;
   background-color: #f9e45f;
 `;
 
@@ -17,7 +17,7 @@ const MobileScreen = styled.div`
 
 const Container = styled.div`
   height: 100%;
-  padding: 0px 34px 40px 34px;
+  padding: 40px 34px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,7 +144,7 @@ function Home() {
       <MobileScreen>
         <Container>
           <ServiceContainer>
-            <ServiceName>서비스 이름</ServiceName>
+            <ServiceName>똑독</ServiceName>
             <ServiceDesc>코레일 예매 도우미</ServiceDesc>
           </ServiceContainer>
           <DescriptionContainer>
