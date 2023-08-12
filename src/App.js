@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import SelectDestination from "./pages/SelectDestination";
+import SelectPassengers from "./pages/SelectPassengers";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/destination" element={<SelectDestination />} />
+        <Route path="/selectpassengers" element={<SelectPassengers />} />
       </Routes>
     </div>
   );
