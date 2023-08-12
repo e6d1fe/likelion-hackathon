@@ -11,10 +11,10 @@ const PageContainer = styled.div`
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100dvh;
+  background-color: #f8f8f8;
 `;
 
 const MobileScreen = styled.div`
-  background-color: #f8f8f8;
   width: 360px;
   height: 100%;
 `;
