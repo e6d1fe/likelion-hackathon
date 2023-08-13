@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Destination from "./pages/Destination";
-import OneWayHeader from "./components/OneWayHeader";
+import SearchDestination from "./pages/SearchDestination";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/destination" element={<Destination />} />
-        <Route path="/onewayheader" element={<OneWayHeader />} />     
+        <Route path="/searchdestination" element={<SearchDestination />} />     
       </Routes>
     </div>
   );

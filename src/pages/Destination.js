@@ -25,13 +25,6 @@ const Container = styled.div`
   gap: 10px;
 `;
 
-// const StartContainer = styled.div`
-//   display: flex; 
-//   flex-direction: column;
-//   justify-content: center;
-//   align-itemns: center;
-// `;
-
 const DepartArriveContainer = styled.div`
   width: 100%;
   height: 50px;
