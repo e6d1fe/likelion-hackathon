@@ -7,7 +7,6 @@ import OneWayHeader from "../components/OneWayHeader";
 import bottomchevron from "../assets/bottomchevron.svg";
 import arrowleft from "../images/Arrow 1.svg";
 import roundtriparrow from "../images/destinationarrowimg.svg";
-
 const PageContainer = styled.div`
   display: flex;
   justify-content: center;
