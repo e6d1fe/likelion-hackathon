@@ -98,7 +98,7 @@ const SearchContainer = styled.div`
 `;
 
 const WhiteDownArrow = styled.img`
-    margin-top: 0;
+  margin-top: 0;
 `;
 
 const SearchIcon = styled.img`
@@ -182,10 +182,10 @@ const StationNameText = styled.div`
 `;
 
 const SearchFirstText = styled.div`
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
 `;
 
 function SearchDestination() {
