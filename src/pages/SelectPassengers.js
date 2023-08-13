@@ -33,7 +33,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   background-color: #f1f1f1;
 `;
 
@@ -115,6 +115,17 @@ function SelectPassengers() {
             </SelectFunction>
           </SelectContainer>
           <SelectContainer>
+            <div style={{ display: "flex", gap: "5px" }}>
+              <SelectOption>유아 (만 6세 미만)</SelectOption>
+              <img src={information} width="14" height="14" alt="icon" />
+            </div>
+            <SelectFunction>
+              <SelectButton>-</SelectButton>
+              <SelectQuantity>0</SelectQuantity>
+              <SelectButton>+</SelectButton>
+            </SelectFunction>
+          </SelectContainer>
+          <SelectContainer>
             <SelectOption>경로 (만 65세 이상)</SelectOption>
             <SelectFunction>
               <SelectButton>-</SelectButton>
@@ -125,7 +136,10 @@ function SelectPassengers() {
             </SelectFunction>
           </SelectContainer>
           <SelectContainer>
-            <SelectOption>중증 장애인</SelectOption>
+            <div style={{ display: "flex", gap: "5px" }}>
+              <SelectOption>중증 장애인</SelectOption>
+              <img src={information} width="14" height="14" alt="icon" />
+            </div>
             <SelectFunction>
               <SelectButton>-</SelectButton>
               <SelectQuantity>0</SelectQuantity>
@@ -133,7 +147,10 @@ function SelectPassengers() {
             </SelectFunction>
           </SelectContainer>
           <SelectContainer>
-            <SelectOption>경증 장애인</SelectOption>
+            <div style={{ display: "flex", gap: "5px" }}>
+              <SelectOption>경증 장애인</SelectOption>
+              <img src={information} width="14" height="14" alt="icon" />
+            </div>
             <SelectFunction>
               <SelectButton>-</SelectButton>
               <SelectQuantity>0</SelectQuantity>
