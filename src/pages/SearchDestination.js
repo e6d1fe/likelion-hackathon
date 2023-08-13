@@ -296,7 +296,7 @@ function SearchDestination() {
                         </StationName>
                     </StationNameContainer>
 
-                    <SearchFirstText><img src="src\images\ㄱㄴㄷㄹ.svg"/></SearchFirstText>
+                    <SearchFirstText><img src="src\images\가나다라.svg"/></SearchFirstText>
                     //이미지 오른쪽 사이드에 넣기
 
 
