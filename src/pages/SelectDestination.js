@@ -27,10 +27,7 @@ const Container = styled.div`
   justify-content: center;
   gap: 10px;
 `;
-<<<<<<< HEAD:src/pages/Destination.js
 
-=======
->>>>>>> e3e2f6fd1cabedb7c57cd2cf05fbaebb1b23fedc:src/pages/SelectDestination.js
 const DepartArriveContainer = styled.div`
   width: 100%;
   height: 50px;
