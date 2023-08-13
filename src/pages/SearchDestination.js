@@ -1,6 +1,12 @@
 import { startTransition } from "react";
 import { styled } from "styled-components";
 
+import whitedownarrow from "../images/whitedownarrow.svg";
+import arrowleft from "../images/Arrow 1.svg";
+import roundtriparrow from "../images/destinationarrowimg.svg";
+import searchicon from "../images/searchicon.svg";
+import searchfirsta from "../images/가나다라.svg";
+
 const PageContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -27,44 +33,35 @@ const Container = styled.div`
 
 const DepartArriveContainer = styled.div`
   width: 100%;
-  height: 50px;
+  height: 27px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 `;
 
 const Depart = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: #646464;
-  padding: 20px;
-`;
-
-const RoundTripArrow = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 13px;
-  font-weight: 600;
-  color: #646464;
-  padding: 20px;
+  margin: 40px;
 `;
 
 const Arrive = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: #646464;
-  padding: 20px;
+  margin: 40px;
 `;
 
 const DepartArriveButtonContainer = styled.div`
   width: 100%;
-  height: 43px;
+  height: 50px;
   display: flex;
   justify-content: space-around;
 `;
@@ -73,8 +70,9 @@ const DepartDesButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: 900;
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 500;
   color: #999999;
   padding: 11px;
 `;
@@ -83,20 +81,10 @@ const ArriveDes = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 24px;
+  font-weight: 500;
   color: #023D6A;
   padding: 11px;
-`;
-
-const Arrow = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 13px;
-  font-weight: 600;
-  color: #646464;
-  padding: 20px;
 `;
 
 const SearchContainer = styled.div`
@@ -110,13 +98,13 @@ const SearchContainer = styled.div`
     border-radius: 20px 20px 0 0;
 `;
 
+const WhiteDownArrow = styled.img`
+    margin-top: 0;
+`;
+
 const SearchIcon = styled.img`
     padding: 8px 10px 8px 10px;
 `;
-
-const DownArrow = styled.div`
-
-`
 
 const SearchBox = styled.div`
     position: absolute;
@@ -130,7 +118,6 @@ const SearchBox = styled.div`
 const SearchInput = styled.input`
     flex: 1;
     border: none;
-    padding: px;
     font-size: 14px;
     color: #999999;
     width: 100%;
@@ -138,6 +125,7 @@ const SearchInput = styled.input`
 `
 
 const SortStationBox = styled.div`
+    position: relative;
     width: 100%;
     height: 24px;
     background-color: #E5E5E5;
@@ -149,10 +137,11 @@ const SortStation = styled.div`
     position: absolute;
     left: 10px;
     color: #185F93;
-    font-size: 11px;
-    font-weight: 900;
+    font-size: 13px;
+    font-weight: 600;
     align-items: center;
     justify-content: center;
+    text-align: center;
 `;
 
 const StationNameContainer = styled.div`
@@ -189,7 +178,15 @@ const StationNameText = styled.div`
     display: flex;
     color: #000000;
     font-size: 16px;
+    font-weight: 500;
     align-items: center;
+`;
+
+const SearchFirstText = styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
 `;
 
 function SearchDestination() {
@@ -199,24 +196,20 @@ function SearchDestination() {
                 <Container>
                     <DepartArriveContainer>
                         <Depart>출발</Depart>
-                        <RoundTripArrow>
-                            <img src='/images/destinationarrowimg.svg' alt="왕복 화살표" />
-                        </RoundTripArrow>
-
+                        <img src={roundtriparrow} width="52" height="24" alt="왕복 화살표" />
                         <Arrive>도착</Arrive>
                     </DepartArriveContainer>
 
                     <DepartArriveButtonContainer>
                         <DepartDesButton type="button">용산</DepartDesButton>
-                        <Arrow>
-                            <img src="\images\Arrow 1.svg" alt="화살표" />
-                        </Arrow>
+                        <img src={arrowleft} width="11"alt="화살표" />
                         <ArriveDes>강릉</ArriveDes>
                     </DepartArriveButtonContainer>
+
                     <SearchContainer>
-                        <DownArrow></DownArrow>
+                       <WhiteDownArrow src={whitedownarrow} width="14px" height="4px" alt="icon" />
                         <SearchBox>
-                            <SearchIcon src="src\images\searchicon.svg"></SearchIcon>
+                            <SearchIcon src={searchicon} width="20" height="20"/>
                             <SearchInput type="text" placeholder="역 명의 초성 또는 전체를 입력해주세요."></SearchInput>
                         </SearchBox>
                     </SearchContainer>
@@ -296,8 +289,7 @@ function SearchDestination() {
                         </StationName>
                     </StationNameContainer>
 
-                    <SearchFirstText><img src="src\images\가나다라.svg"/></SearchFirstText>
-                    //이미지 오른쪽 사이드에 넣기
+                    <SearchFirstText src={searchfirsta} width="24" height="462" alt="검색"/>
 
 
                 </Container>

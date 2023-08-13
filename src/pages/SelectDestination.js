@@ -4,6 +4,10 @@ import ServiceHeader from "../components/ServiceHeader";
 import ReservationHeader from "../components/ReservationHeader";
 import OneWayHeader from "../components/OneWayHeader";
 
+import bottomchevron from "../assets/bottomchevron.svg";
+import arrowleft from "../images/Arrow 1.svg";
+import roundtriparrow from "../images/destinationarrowimg.svg";
+
 const PageContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -27,50 +31,38 @@ const Container = styled.div`
   justify-content: center;
   gap: 10px;
 `;
-<<<<<<< HEAD:src/pages/Destination.js
 
-=======
->>>>>>> e3e2f6fd1cabedb7c57cd2cf05fbaebb1b23fedc:src/pages/SelectDestination.js
 const DepartArriveContainer = styled.div`
   width: 100%;
-  height: 50px;
+  height: 27px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 `;
 
 const Depart = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: #646464;
-  padding: 20px;
-`;
-
-const RoundTripArrow = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 13px;
-  font-weight: 600;
-  color: #646464;
-  padding: 20px;
+  margin: 40px;
 `;
 
 const Arrive = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: #646464;
-  padding: 20px;
+  margin: 40px;
 `;
 
 const DepartArriveButtonContainer = styled.div`
   width: 100%;
-  height: 43px;
+  height: 50px;
   display: flex;
   justify-content: space-around;
 `;
@@ -79,8 +71,8 @@ const DepartDesButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 24px;
+  font-weight: 500;
   color: #023d6a;
   padding: 11px;
 `;
@@ -89,34 +81,34 @@ const ArriveDes = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 24px;
+  font-weight: 500;
   color: #023d6a;
   padding: 11px;
 `;
 
-const Arrow = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 13px;
-  font-weight: 600;
-  color: #646464;
-  padding: 20px;
-`;
+// const Arrow = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 13px;
+//   font-weight: 600;
+//   color: #646464;
+//   padding: 20px;
+// `;
 
 const Map = styled.div`
   width: 100%;
   height: 30px;
   color: #646464;
   border: 1px solid #cdcdcd;
-  border-radius: 50px;
+  border-radius: 40px;
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
 `;
 
 const Divider = styled.div`
@@ -133,14 +125,15 @@ const InformChooseContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 `;
 
 const Information = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
   color: #3e8bc3;
   padding-top: 10px;
 `;
@@ -149,8 +142,8 @@ const Choose = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 19px;
+  font-weight: 500;
   color: #000000;
   padding: 15px;
 `;
@@ -175,18 +168,13 @@ function Destination() {
         <Container>
           <DepartArriveContainer>
             <Depart>출발</Depart>
-            <RoundTripArrow>
-              <img src="/images/destinationarrowimg.svg" alt="왕복 화살표" />
-            </RoundTripArrow>
-
+            <img src={roundtriparrow} width="52" height="24" alt="왕복 화살표" />
             <Arrive>도착</Arrive>
           </DepartArriveContainer>
 
           <DepartArriveButtonContainer>
             <DepartDesButton type="button">용산</DepartDesButton>
-            <Arrow>
-              <img src="\images\Arrow 1.svg" alt="화살표" />
-            </Arrow>
+            <img src={arrowleft} width="11"alt="화살표" />
             <ArriveDes>강릉</ArriveDes>
           </DepartArriveButtonContainer>
 
@@ -195,7 +183,7 @@ function Destination() {
           <InformChooseContainer>
             <Information>출발일</Information>
             <Choose>2023년 7월 23일 (일) 21:43</Choose>
-            <DownArrow></DownArrow>
+            <img src={bottomchevron} width="14" height="4" alt="icon" />
           </InformChooseContainer>
 
           <Divider></Divider>
@@ -203,7 +191,7 @@ function Destination() {
           <InformChooseContainer>
             <Information>승객 연령 및 좌석수</Information>
             <Choose>총 1명</Choose>
-            <DownArrow></DownArrow>
+            <img src={bottomchevron} width="14" height="4" alt="icon" />
           </InformChooseContainer>
 
           <Divider></Divider>
@@ -211,8 +199,11 @@ function Destination() {
           <InformChooseContainer>
             <Information>상세옵션</Information>
             <Choose>인접역 표출, SR 연계 표출</Choose>
-            <DownArrow></DownArrow>
+            <img src={bottomchevron} width="14" height="4" alt="icon" />
           </InformChooseContainer>
+
+          <Divider></Divider>
+
         </Container>
       </MobileScreen>
     </PageContainer>
