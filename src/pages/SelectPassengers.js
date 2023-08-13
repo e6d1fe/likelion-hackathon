@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
 
+import { useNavigate } from "react-router-dom";
+
 import ServiceHeader from "../components/ServiceHeader";
 import ReservationHeader from "../components/ReservationHeader";
 import OneWayHeader from "../components/OneWayHeader";
@@ -82,11 +84,57 @@ const SelectButton = styled.button`
   background-color: white;
 `;
 
+const CheckRidesContainer = styled.div`
+  width: 100%;
+  height: 56px;
+  padding-bottom: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const RegisterPayment = styled.div`
+  background-color: #cde0ee;
+  font-size: 19px;
+  font-weight: 500;
+  color: #023d6a;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const CheckRides = styled.button`
+  border: none;
+  background-color: red;
+  font-size: 19px;
+  font-weight: 500;
+  color: white;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 function SelectPassengers() {
   const [people, setPeople] = useState(0);
 
+  const navigate = useNavigate();
+
   function plusOne() {
     setPeople(people + 1);
+  }
+
+  function minusOne() {
+    people >= 1 ? setPeople(people - 1) : setPeople(0);
+  }
+
+  function toNextPage() {
+    if (people === 1) {
+      navigate("/selectride");
+    }
   }
 
   return (
@@ -128,7 +176,7 @@ function SelectPassengers() {
           <SelectContainer>
             <SelectOption>경로 (만 65세 이상)</SelectOption>
             <SelectFunction>
-              <SelectButton>-</SelectButton>
+              <SelectButton onClick={minusOne}>-</SelectButton>
               <SelectQuantity>{people}</SelectQuantity>
               <SelectButton onClick={plusOne} style={{ backgroundColor: "red", color: "white" }}>
                 +
@@ -159,6 +207,10 @@ function SelectPassengers() {
           </SelectContainer>
         </Container>
         <DetailOption />
+        <CheckRidesContainer>
+          <RegisterPayment>간편구매 등록</RegisterPayment>
+          <CheckRides onClick={toNextPage}>열차 조회하기</CheckRides>
+        </CheckRidesContainer>
         <InstructionFooter />
       </MobileScreen>
     </PageContainer>
