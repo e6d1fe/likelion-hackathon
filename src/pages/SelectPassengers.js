@@ -79,6 +79,7 @@ const SelectButton = styled.button`
   align-items: center;
   border: 1px solid lightgray;
   color: gray;
+  background-color: white;
 `;
 
 function SelectPassengers() {
