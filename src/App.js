@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 
-import SearchDestination from "./pages/SearchDestination";
+import SearchDestination from "./pages/SelectDestination";
 import SelectDestination from "./pages/SelectDestination";
 import SelectPassengers from "./pages/SelectPassengers";
 import DateChoose from "./pages/DateChoose";
@@ -18,8 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/instructions" element={<Instructions />} />
-        <Route path="/destination" element={<SelectDestination />} />
-        <Route path="/searchdestination" element={<SearchDestination />} />
+        <Route path="/selectdestination" element={<SelectDestination />} />
         <Route path="/selectpassengersinfo" element={<BeforeSelectPassengers />} />
         <Route path="/selectpassengers" element={<SelectPassengers />} />
         <Route path="/selectridesinfo" element={<BeforeSelectRides />} />
