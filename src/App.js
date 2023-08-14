@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 
 import SelectDestination from "./pages/SelectDestination";
 import SelectPassengers from "./pages/SelectPassengers";
-import DateChoose from "./pages/DateChoose";
+import SelectDate from "./pages/SelectDate";
 import Complete from "./pages/Complete";
 import Instructions from "./pages/Instructions";
 import SelectRides from "./pages/SelectRides";
@@ -22,7 +22,7 @@ function App() {
         <Route path="/selectpassengers" element={<SelectPassengers />} />
         <Route path="/selectridesinfo" element={<BeforeSelectRides />} />
         <Route path="/selectrides" element={<SelectRides />} />
-        <Route path="/datechoose" element={<DateChoose />} />
+        <Route path="/selectdate" element={<SelectDate />} />
         <Route path="/complete" element={<Complete />} />
       </Routes>
     </div>
