@@ -1,7 +1,14 @@
 import { styled } from "styled-components";
 
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import ServiceHeader from "../components/ServiceHeader";
+
 import topchevron from "../assets/topchevron.svg";
 import bottomchevron from "../assets/bottomchevron.svg";
+import ReservationHeader from "../components/ReservationHeader";
+import OneWayHeader from "../components/OneWayHeader";
 
 const PageContainer = styled.div`
   display: flex;
@@ -19,7 +26,6 @@ const MobileScreen = styled.div`
 `;
 
 const Container = styled.div`
-  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -89,7 +95,6 @@ const Day = styled.div`
   display: flex;
   color: #3e8bc3;
   text-align: center;
-  font-family: Pretendard;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -110,7 +115,6 @@ const Date = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: ${(props) => (props.isFirst ? "10px" : "0")};
   span {
     font-size: 1px;
   }
@@ -124,14 +128,13 @@ const TimeContainer = styled.div`
   position: absolute;
   top: 140px;
   justify-content: space-around;
-  align-item: center;
+  align-items: center;
 `;
 
 const Time = styled.div`
   width: 37px;
-  align-item: center;
+  align-items: center;
   text-align: center;
-  font-family: Pretendard;
   font-size: 16px;
   font-weight: 400;
   padding: 8.5px;
@@ -172,10 +175,46 @@ const Choose = styled.p`
   color: #000;
 `;
 
+const NextButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cde0ee;
+  width: 100%;
+  height: 57px;
+  color: #234b67;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 10px;
+`;
+
 function DateChoose() {
+  const [selectDay, setSelectDay] = useState(false);
+
+  const [selectTime, setSelectTime] = useState(false);
+
+  const navigate = useNavigate();
+
+  function daySelected() {
+    setSelectDay(true);
+  }
+
+  function timeSelected() {
+    setSelectTime(true);
+  }
+
+  function toNextPage() {
+    if (selectDay && selectTime) {
+      navigate("/");
+    }
+  }
+
   return (
     <PageContainer>
       <MobileScreen>
+        <ServiceHeader />
+        <ReservationHeader />
+        <OneWayHeader />
         <Container>
           <DepartDateContainer>
             <Title>출발일</Title>
@@ -197,7 +236,7 @@ function DateChoose() {
 
             <DateContainer>
               <Date isFirst>23</Date>
-              <Date style={{ color: "white", backgroundColor: "#0066B4" }}>
+              <Date onClick={daySelected} style={{ color: "white", backgroundColor: "red" }}>
                 24
                 <br />
                 <span>출발일</span>
@@ -229,7 +268,7 @@ function DateChoose() {
               <Time>
                 21<span>시</span>
               </Time>
-              <Time style={{ color: "white", backgroundColor: "#68A6D5" }}>
+              <Time onClick={timeSelected} style={{ color: "white", backgroundColor: "red" }}>
                 22<span>시</span>
               </Time>
             </TimeContainer>
@@ -253,6 +292,7 @@ function DateChoose() {
 
           <Divider></Divider>
         </Container>
+        <NextButton onClick={toNextPage}>다음</NextButton>
       </MobileScreen>
     </PageContainer>
   );
