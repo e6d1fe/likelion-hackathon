@@ -235,7 +235,7 @@ function DateChoose() {
             </DayContainer>
 
             <DateContainer>
-              <Date isFirst>23</Date>
+              <Date>23</Date>
               <Date onClick={daySelected} style={{ color: "white", backgroundColor: "red" }}>
                 24
                 <br />
