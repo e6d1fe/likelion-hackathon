@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 
-import SearchDestination from "./pages/SelectDestination";
 import SelectDestination from "./pages/SelectDestination";
 import SelectPassengers from "./pages/SelectPassengers";
 import DateChoose from "./pages/DateChoose";
