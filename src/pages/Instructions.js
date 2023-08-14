@@ -2,8 +2,6 @@ import { styled } from "styled-components";
 
 import ServiceHeader from "../components/ServiceHeader";
 
-import { useNavigate } from "react-router-dom";
-
 const PageContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -31,7 +29,7 @@ const Container = styled.div`
   background-color: #f1f1f1;
 `;
 
-const GoodbyeText = styled.div`
+const InstructText = styled.div`
   background-color: #f9e45f;
   width: 300px;
   height: 400px;
@@ -40,13 +38,14 @@ const GoodbyeText = styled.div`
   font-weight: 500;
   color: #000;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  line-height: 200%;
+  line-height: 120%;
 `;
 
-const GoHome = styled.button`
+const NextPage = styled.button`
   border: none;
   width: 300px;
   height: 50px;
@@ -60,30 +59,28 @@ const GoHome = styled.button`
   align-items: center;
 `;
 
-function Complete() {
-  const navigate = useNavigate();
+const Red = styled.p`
+  display: block;
+  color: red;
+  font-size: 35px;
+  font-weight: 600;
+`;
 
-  function goHome() {
-    navigate("/");
-  }
-
+function Instructions() {
   return (
     <PageContainer>
       <MobileScreen>
         <ServiceHeader />
         <Container>
-          <GoodbyeText>
-            연습이 끝났습니다!
-            <br />
-            이제 코레일 앱으로 가서
-            <br />
-            연습한 대로 해 볼까요?
-          </GoodbyeText>
-          <GoHome onClick={goHome}>처음으로 돌아가기</GoHome>
+          <InstructText>
+            <Red>빨간색 버튼을</Red>
+            <br />잘 따라가 주세요!
+          </InstructText>
+          <NextPage>다음</NextPage>
         </Container>
       </MobileScreen>
     </PageContainer>
   );
 }
 
-export default Complete;
+export default Instructions;

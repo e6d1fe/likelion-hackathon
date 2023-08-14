@@ -7,12 +7,14 @@ import SelectDestination from "./pages/SelectDestination";
 import SelectPassengers from "./pages/SelectPassengers";
 import DateChoose from "./pages/DateChoose";
 import Complete from "./pages/Complete";
+import Instructions from "./pages/Instructions";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/instructions" element={<Instructions />} />
         <Route path="/destination" element={<SelectDestination />} />
         <Route path="/searchdestination" element={<SearchDestination />} />
         <Route path="/selectpassengers" element={<SelectPassengers />} />

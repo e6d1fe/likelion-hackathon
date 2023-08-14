@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
 
+import { useNavigate } from "react-router-dom";
+
 const PageContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -142,6 +144,12 @@ const Button = styled.button`
 `;
 
 function Home() {
+  const navigate = useNavigate();
+
+  function toNextPage() {
+    navigate("/instructions");
+  }
+
   return (
     <PageContainer>
       <MobileScreen>
@@ -170,7 +178,9 @@ function Home() {
               <People>승객: 경로 1명</People>
             </InstructionContainer>
             <ButtonContainer>
-              <Button type="button">연습하기</Button>
+              <Button type="button" onClick={toNextPage}>
+                연습하기
+              </Button>
             </ButtonContainer>
           </DescriptionContainer>
         </Container>
