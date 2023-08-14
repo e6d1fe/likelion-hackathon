@@ -77,7 +77,7 @@ function Complete() {
             <br />
             이제 코레일 앱으로 가서
             <br />
-            연습한 대로 해 볼까요?
+            연습한 대로 예매해 볼까요?
           </GoodbyeText>
           <GoHome onClick={goHome}>처음으로 돌아가기</GoHome>
         </Container>
