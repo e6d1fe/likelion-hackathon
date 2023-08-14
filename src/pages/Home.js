@@ -13,11 +13,13 @@ const PageContainer = styled.div`
 const MobileScreen = styled.div`
   width: 360px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Container = styled.div`
   height: 100%;
-  padding: 40px 34px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,6 +32,7 @@ const ServiceContainer = styled.div`
   align-items: start;
   justify-content: center;
   gap: 5px;
+  padding-top: 40px;
 `;
 
 const ServiceName = styled.h1`
