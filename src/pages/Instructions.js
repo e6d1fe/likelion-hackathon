@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
 
+import { useNavigate } from "react-router-dom";
+
 import ServiceHeader from "../components/ServiceHeader";
 
 const PageContainer = styled.div`
@@ -43,6 +45,7 @@ const InstructText = styled.div`
   align-items: center;
   text-align: center;
   line-height: 120%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
 const NextPage = styled.button`
@@ -57,6 +60,7 @@ const NextPage = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
 const Red = styled.p`
@@ -67,6 +71,12 @@ const Red = styled.p`
 `;
 
 function Instructions() {
+  const navigate = useNavigate();
+
+  function toNextPage() {
+    navigate("/");
+  }
+
   return (
     <PageContainer>
       <MobileScreen>
@@ -76,7 +86,7 @@ function Instructions() {
             <Red>빨간색 버튼을</Red>
             <br />잘 따라가 주세요!
           </InstructText>
-          <NextPage>다음</NextPage>
+          <NextPage onClick={toNextPage}>다음</NextPage>
         </Container>
       </MobileScreen>
     </PageContainer>
