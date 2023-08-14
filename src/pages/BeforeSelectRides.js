@@ -61,22 +61,24 @@ const NextButton = styled.button`
   color: #000;
 `;
 
-function BeforeSelectPassengers() {
+function BeforeSelectRides() {
   const navigate = useNavigate();
 
   function toNextPage() {
-    navigate("/selectpassengers");
+    navigate("/selectrides");
   }
 
   return (
     <PageContainer>
       <MobileScreen>
         <TextContainer>
-          시간까지 모두 정했다면,
+          마지막으로,
           <br />
-          인원을 선택해 볼게요!
+          인원수 선택을 끝냈다면
           <br />
-          <Red>경로 1명을</Red>
+          열차를 선택해 볼게요!
+          <br />
+          <Red>18시 27분 열차를</Red>
           예매해 볼까요?
         </TextContainer>
         <NextButton onClick={toNextPage}>다음</NextButton>
@@ -85,4 +87,4 @@ function BeforeSelectPassengers() {
   );
 }
 
-export default BeforeSelectPassengers;
+export default BeforeSelectRides;
