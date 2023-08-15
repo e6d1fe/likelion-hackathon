@@ -1,9 +1,9 @@
 import { styled } from "styled-components";
 
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import ServiceHeader from "../components/ServiceHeader";
+import InstructionFooter from "../components/InstructionFooter";
 
 import topchevron from "../assets/topchevron.svg";
 import whitebottomchevron from "../images/whitedownarrow.svg";
@@ -190,24 +190,10 @@ const NextButton = styled.div`
 `;
 
 function SelectPassengers() {
-  const [selectDay, setSelectDay] = useState(false);
-
-  const [selectTime, setSelectTime] = useState(false);
-
   const navigate = useNavigate();
 
-  function daySelected() {
-    setSelectDay(true);
-  }
-
-  function timeSelected() {
-    setSelectTime(true);
-  }
-
   function toNextPage() {
-    if (selectDay && selectTime) {
-      navigate("/");
-    }
+    navigate("/selectpassengersdetail");
   }
 
   return (
@@ -237,7 +223,7 @@ function SelectPassengers() {
 
             <DateContainer>
               <Date>23</Date>
-              <Date onClick={daySelected} style={{ color: "white", backgroundColor: "#0066B4" }}>
+              <Date style={{ color: "white", backgroundColor: "#0066B4" }}>
                 24
                 <span>출발일</span>
               </Date>
@@ -250,35 +236,24 @@ function SelectPassengers() {
             </DateContainer>
 
             <TimeContainer>
-              <Time>
-                16<span>시</span>
-              </Time>
-              <Time>
-                17<span>시</span>
-              </Time>
-              <Time onClick={timeSelected} style={{ color: "white", backgroundColor: "#68A6D5" }}>
-                18<span>시</span>
-              </Time>
-              <Time>
-                19<span>시</span>
-              </Time>
-              <Time>
-                20<span>시</span>
-              </Time>
-              <Time>
-                21<span>시</span>
-              </Time>
-              <Time>
-                22<span>시</span>
-              </Time>
+              <Time>16시</Time>
+              <Time>17시</Time>
+              <Time style={{ color: "white", backgroundColor: "#68A6D5" }}>18시</Time>
+              <Time>19시</Time>
+              <Time>20시</Time>
+              <Time>21시</Time>
+              <Time>22시</Time>
             </TimeContainer>
           </DepartDateChooseContainer>
 
           <Divider></Divider>
 
-          <InformChooseContainer style={{backgroundColor: "red", color: "white"}}>
-            <Information style={{color: "white"}}>승객 연령 및 좌석수</Information>
-            <Choose style={{color: "white"}}>경로 총 1명</Choose>
+          <InformChooseContainer
+            style={{ backgroundColor: "red", color: "white" }}
+            onClick={toNextPage}
+          >
+            <Information style={{ color: "white" }}>승객 연령 및 좌석수</Information>
+            <Choose style={{ color: "white" }}>경로 총 1명</Choose>
             <img src={whitebottomchevron} width="14" height="5" alt="icon" />
           </InformChooseContainer>
 
@@ -289,10 +264,9 @@ function SelectPassengers() {
             <Choose>인접역 표출, SR 연계 표출</Choose>
             <img src={bottomchevron} width="14" height="4" alt="icon" />
           </InformChooseContainer>
-
           <Divider></Divider>
         </Container>
-        <NextButton onClick={toNextPage}>다음</NextButton>
+        <InstructionFooter />
       </MobileScreen>
     </PageContainer>
   );
