@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import ServiceHeader from "../components/ServiceHeader";
+import InstructionFooter from "../components/InstructionFooter";
 
 import topchevron from "../assets/topchevron.svg";
 import bottomchevron from "../assets/bottomchevron.svg";
@@ -193,19 +194,25 @@ function SelectDateDetail() {
 
   const [selectTime, setSelectTime] = useState(false);
 
+  const [dayText, setDayText] = useState("24");
+
+  const [timeText, setTimeText] = useState("18시");
+
   const navigate = useNavigate();
 
   function daySelected() {
     setSelectDay(true);
+    setDayText("완료");
   }
 
   function timeSelected() {
     setSelectTime(true);
+    setTimeText("완료");
   }
 
   function toNextPage() {
     if (selectDay && selectTime) {
-      navigate("/");
+      navigate("/selectpassengersinfo");
     }
   }
 
@@ -237,8 +244,7 @@ function SelectDateDetail() {
             <DateContainer>
               <Date>23</Date>
               <Date onClick={daySelected} style={{ color: "white", backgroundColor: "red" }}>
-                24
-                <span>출발일</span>
+                {dayText}
               </Date>
               <Date>25</Date>
               <Date>26</Date>
@@ -249,27 +255,15 @@ function SelectDateDetail() {
             </DateContainer>
 
             <TimeContainer>
-              <Time>
-                16<span>시</span>
-              </Time>
-              <Time>
-                17<span>시</span>
-              </Time>
+              <Time>16시</Time>
+              <Time>17시</Time>
               <Time onClick={timeSelected} style={{ color: "white", backgroundColor: "red" }}>
-                18<span>시</span>
+                {timeText}
               </Time>
-              <Time>
-                19<span>시</span>
-              </Time>
-              <Time>
-                20<span>시</span>
-              </Time>
-              <Time>
-                21<span>시</span>
-              </Time>
-              <Time>
-                22<span>시</span>
-              </Time>
+              <Time>19시</Time>
+              <Time>20시</Time>
+              <Time>21시</Time>
+              <Time>22시</Time>
             </TimeContainer>
           </DepartDateChooseContainer>
 
@@ -291,7 +285,10 @@ function SelectDateDetail() {
 
           <Divider></Divider>
         </Container>
-        <NextButton onClick={toNextPage}>다음</NextButton>
+        <div style={{ paddingBottom: "90px" }}>
+          <NextButton onClick={toNextPage}>다음</NextButton>
+        </div>
+        <InstructionFooter />
       </MobileScreen>
     </PageContainer>
   );
