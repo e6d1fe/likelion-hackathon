@@ -25,12 +25,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/instructions" element={<Instructions />} />
-        <Route path="/selectdepart" element={<SelectDepart />}/>
-        <Route path="/selectdepartdetail" element={<SelectDepartDetail />}/>
+        <Route path="/selectdepart" element={<SelectDepart />} />
+        <Route path="/selectdepartdetail" element={<SelectDepartDetail />} />
         <Route path="/selectarriveinfo" element={<BeforeSelectArrive />} />
         <Route path="/selectarrive" element={<SelectArrive />} />
         <Route path="/selectarrivedetail" element={<SelectArriveDetail />} />
-        <Route path="/selectdestination" element={<SelectDestination />} />
         <Route path="/selectdateinfo" element={<BeforeSelectDate />} />
         <Route path="/selectdate" element={<SelectDate />} />
         <Route path="/selectdatedetail" element={<SelectDateDetail />} />
@@ -39,7 +38,6 @@ function App() {
         <Route path="/selectpassengersdetail" element={<SelectPassengersDetail />} />
         <Route path="/selectridesinfo" element={<BeforeSelectRides />} />
         <Route path="/selectrides" element={<SelectRides />} />
-        <Route path="/selectdate" element={<SelectDate />} />
         <Route path="/complete" element={<Complete />} />
       </Routes>
     </div>
