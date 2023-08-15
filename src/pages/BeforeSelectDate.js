@@ -65,7 +65,7 @@ function BeforeSelectDate() {
   const navigate = useNavigate();
 
   function toNextPage() {
-    navigate("/selectpassengers");
+    navigate("/selectdate");
   }
 
   return (
@@ -75,9 +75,10 @@ function BeforeSelectDate() {
           다음은 출발 시간을
           <br />
           정해볼게요!
-          <Red>2023년 7월 24일
-          <br />
-          18시 27분
+          <Red>
+            2023년 7월 24일
+            <br />
+            18시 27분
           </Red>
           기차를 예매해야 해요.
         </TextContainer>
