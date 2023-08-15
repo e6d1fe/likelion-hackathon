@@ -65,7 +65,7 @@ function BeforeSelectArrive() {
   const navigate = useNavigate();
 
   function toNextPage() {
-    navigate("/selectpassengers");
+    navigate("/selectarrive");
   }
 
   return (
@@ -74,7 +74,7 @@ function BeforeSelectArrive() {
         <TextContainer>
           다음은 목적지를
           <br />
-          바꿔볼게요
+          바꿔볼게요!
           <br />
           저희의 목적지는
           <br />
