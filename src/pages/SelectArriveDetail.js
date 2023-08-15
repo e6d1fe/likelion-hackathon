@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import ServiceHeader from "../components/ServiceHeader";
+import InstructionFooter from "../components/InstructionFooter";
 
 import whitedownarrow from "../images/whitedownarrow.svg";
 import arrowleft from "../images/Arrow 1.svg";
@@ -210,15 +211,18 @@ const NextButton = styled.div`
 function SelectArriveDetail() {
   const [selected, setSelected] = useState(false);
 
+  const [text, setText] = useState("대전");
+
   const navigate = useNavigate();
 
   function select() {
     setSelected(true);
+    setText("대전 선택 완료");
   }
 
   function toNextPage() {
     if (selected === true) {
-      navigate("/complete");
+      navigate("/selectdateinfo");
     }
   }
 
@@ -307,7 +311,7 @@ function SelectArriveDetail() {
 
           <StationNameContainer onClick={select}>
             <StationName style={{ backgroundColor: "red" }}>
-              <StationNameText style={{ color: "white" }}>대전</StationNameText>
+              <StationNameText style={{ color: "white" }}>{text}</StationNameText>
             </StationName>
             <StationName>
               <StationNameText>천안</StationNameText>
@@ -324,7 +328,10 @@ function SelectArriveDetail() {
           </StationNameContainer>
           <SearchFirstText src={searchfirsta} width="24" height="462" alt="검색" />
         </Container>
-        <NextButton onClick={toNextPage}>다음</NextButton>
+        <div style={{ paddingBottom: "90px" }}>
+          <NextButton onClick={toNextPage}>다음</NextButton>
+        </div>
+        <InstructionFooter />
       </MobileScreen>
     </PageContainer>
   );
