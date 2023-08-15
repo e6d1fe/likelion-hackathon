@@ -207,7 +207,7 @@ const NextButton = styled.div`
   margin-top: 10px;
 `;
 
-function SearchDestination() {
+function SelectDepartDetail() {
   const [selected, setSelected] = useState(false);
 
   const navigate = useNavigate();
@@ -278,9 +278,9 @@ function SearchDestination() {
             <SortStation>주요역</SortStation>
           </SortStationBox>
 
-          <StationNameContainer>
-            <StationName>
-              <StationNameText>서울</StationNameText>
+          <StationNameContainer onClick={select}>
+            <StationName style={{ backgroundColor: "red" }}>
+              <StationNameText style={{ color: "white" }}>서울</StationNameText>
             </StationName>
             <StationName>
               <StationNameText>용산</StationNameText>
@@ -306,8 +306,8 @@ function SearchDestination() {
           </StationNameContainer>
 
           <StationNameContainer onClick={select}>
-            <StationName style={{ backgroundColor: "red" }}>
-              <StationNameText style={{ color: "white" }}>대전</StationNameText>
+            <StationName>
+              <StationNameText>대전</StationNameText>
             </StationName>
             <StationName>
               <StationNameText>천안</StationNameText>
@@ -330,4 +330,4 @@ function SearchDestination() {
   );
 }
 
-export default SearchDestination;
+export default SelectDepartDetail;

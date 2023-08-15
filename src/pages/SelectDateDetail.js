@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import ServiceHeader from "../components/ServiceHeader";
 
 import topchevron from "../assets/topchevron.svg";
-import whitebottomchevron from "../images/whitedownarrow.svg";
 import bottomchevron from "../assets/bottomchevron.svg";
 import ReservationHeader from "../components/ReservationHeader";
 import OneWayHeader from "../components/OneWayHeader";
@@ -189,7 +188,7 @@ const NextButton = styled.div`
   margin-top: 10px;
 `;
 
-function SelectPassengers() {
+function SelectDateDetail() {
   const [selectDay, setSelectDay] = useState(false);
 
   const [selectTime, setSelectTime] = useState(false);
@@ -237,7 +236,7 @@ function SelectPassengers() {
 
             <DateContainer>
               <Date>23</Date>
-              <Date onClick={daySelected} style={{ color: "white", backgroundColor: "#0066B4" }}>
+              <Date onClick={daySelected} style={{ color: "white", backgroundColor: "red" }}>
                 24
                 <span>출발일</span>
               </Date>
@@ -256,7 +255,7 @@ function SelectPassengers() {
               <Time>
                 17<span>시</span>
               </Time>
-              <Time onClick={timeSelected} style={{ color: "white", backgroundColor: "#68A6D5" }}>
+              <Time onClick={timeSelected} style={{ color: "white", backgroundColor: "red" }}>
                 18<span>시</span>
               </Time>
               <Time>
@@ -276,10 +275,10 @@ function SelectPassengers() {
 
           <Divider></Divider>
 
-          <InformChooseContainer style={{backgroundColor: "red", color: "white"}}>
-            <Information style={{color: "white"}}>승객 연령 및 좌석수</Information>
-            <Choose style={{color: "white"}}>경로 총 1명</Choose>
-            <img src={whitebottomchevron} width="14" height="5" alt="icon" />
+          <InformChooseContainer>
+            <Information>승객 연령 및 좌석수</Information>
+            <Choose>경로 총 1명</Choose>
+            <img src={bottomchevron} width="14" height="5" alt="icon" />
           </InformChooseContainer>
 
           <Divider></Divider>
@@ -298,4 +297,4 @@ function SelectPassengers() {
   );
 }
 
-export default SelectPassengers;
+export default SelectDateDetail;

@@ -2,14 +2,22 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 
-import SelectDestination from "./pages/SelectDestination";
+import SelectDestination from "./pages/SelectDepartDetail";
 import SelectPassengers from "./pages/SelectPassengers";
-import SelectDate from "./pages/SelectDate";
 import Complete from "./pages/Complete";
 import Instructions from "./pages/Instructions";
 import SelectRides from "./pages/SelectRides";
 import BeforeSelectPassengers from "./pages/BeforeSelectPassengers";
 import BeforeSelectRides from "./pages/BeforeSelectRides";
+import BeforeSelectArrive from "./pages/BeforeSelectArrive";
+import BeforeSelectDate from "./pages/BeforeSelectDate";
+import SelectDepart from "./pages/SelectDepart";
+import SelectArrive from "./pages/SelectArrive";
+import SelectArriveDetail from "./pages/SelectArriveDetail";
+import SelectDate from "./pages/SelectDate";
+import SelectDateDetail from "./pages/SelectDateDetail";
+import SelectDepartDetail from "./pages/SelectDepartDetail";
+import SelectPassengersDetail from "./pages/SelectPassengersDetail";
 
 function App() {
   return (
@@ -17,9 +25,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/instructions" element={<Instructions />} />
+        <Route path="/selectdepart" element={<SelectDepart />}/>
+        <Route path="/selectdepartdetail" element={<SelectDepartDetail />}/>
+        <Route path="/selectarriveinfo" element={<BeforeSelectArrive />} />
+        <Route path="/selectarrive" element={<SelectArrive />} />
+        <Route path="/selectarrivedetail" element={<SelectArriveDetail />} />
         <Route path="/selectdestination" element={<SelectDestination />} />
+        <Route path="/selectdateinfo" element={<BeforeSelectDate />} />
+        <Route path="/selectdate" element={<SelectDate />} />
+        <Route path="/selectdatedetail" element={<SelectDateDetail />} />
         <Route path="/selectpassengersinfo" element={<BeforeSelectPassengers />} />
         <Route path="/selectpassengers" element={<SelectPassengers />} />
+        <Route path="/selectpassengersdetail" element={<SelectPassengersDetail />} />
         <Route path="/selectridesinfo" element={<BeforeSelectRides />} />
         <Route path="/selectrides" element={<SelectRides />} />
         <Route path="/selectdate" element={<SelectDate />} />

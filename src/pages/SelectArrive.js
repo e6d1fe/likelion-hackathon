@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 import ServiceHeader from "../components/ServiceHeader";
 import ReservationHeader from "../components/ReservationHeader";
 import OneWayHeader from "../components/OneWayHeader";
-import whitedownarrow from "../images/whitedownarrow.svg";
+
 import bottomchevron from "../assets/bottomchevron.svg";
 import arrowleft from "../images/Arrow 1.svg";
 import roundtriparrow from "../images/destinationarrowimg.svg";
@@ -137,8 +137,17 @@ const Choose = styled.div`
   padding: 15px;
 `;
 
+const DownArrow = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5px;
+  font-weight: 600;
+  color: #646464;
+  padding: 10px;
+`;
 
-function SelectDate() {
+function SelectArrive() {
     return (
         <PageContainer>
             <MobileScreen>
@@ -155,15 +164,15 @@ function SelectDate() {
                     <DepartArriveButtonContainer>
                         <DepartDesButton type="button">용산</DepartDesButton>
                         <img src={arrowleft} width="11" alt="화살표" />
-                        <ArriveDes>강릉</ArriveDes>
+                        <ArriveDes style={{backgroundColor: "red", color: "white"}}>강릉</ArriveDes>
                     </DepartArriveButtonContainer>
 
                     <Map>KTX역 선택 지도</Map>
 
-                    <InformChooseContainer style={{backgroundColor: "red", color: "white"}}>
-                        <Information style={{color: "white"}}>출발일</Information>
-                        <Choose style={{color: "white"}}>2023년 7월 23일 (일) 21:43</Choose>
-                        <img src={whitedownarrow} width="14" height="4" alt="icon" />
+                    <InformChooseContainer>
+                        <Information>출발일</Information>
+                        <Choose>2023년 7월 23일 (일) 21:43</Choose>
+                        <img src={bottomchevron} width="14" height="4" alt="icon" />
                     </InformChooseContainer>
 
                     <Divider></Divider>
@@ -189,4 +198,4 @@ function SelectDate() {
         </PageContainer>
     );
 }
-export default SelectDate;
+export default SelectArrive;
