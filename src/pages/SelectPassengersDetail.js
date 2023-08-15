@@ -133,7 +133,7 @@ function SelectPassengersDetail() {
 
   function toNextPage() {
     if (people === 1) {
-      navigate("/selectride");
+      navigate("/selectridesinfo");
     }
   }
 
