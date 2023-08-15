@@ -51,19 +51,7 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-`;
-
-const PracticeType = styled.div`
-  width: 100%;
-  height: 76px;
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  font-weight: 600;
+  margin-top: 20px;
 `;
 
 const InstructionContainer = styled.div`
@@ -159,7 +147,6 @@ function Home() {
             <ServiceDesc>코레일 예매 도우미</ServiceDesc>
           </ServiceContainer>
           <DescriptionContainer>
-            <PracticeType>편도 연습</PracticeType>
             <InstructionContainer>
               <Instruction>
                 아래의 조건에 맞게
