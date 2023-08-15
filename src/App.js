@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 
-import SelectDestination from "./pages/SelectDepartDetail";
 import SelectPassengers from "./pages/SelectPassengers";
 import Complete from "./pages/Complete";
+import Instructions1 from "./pages/Instructions1";
 import Instructions2 from "./pages/Instructions2";
 import SelectRides from "./pages/SelectRides";
 import BeforeSelectPassengers from "./pages/BeforeSelectPassengers";
@@ -24,6 +24,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="instructions1" element={<Instructions1 />} />
         <Route path="/instructions2" element={<Instructions2 />} />
         <Route path="/selectdepart" element={<SelectDepart />} />
         <Route path="/selectdepartdetail" element={<SelectDepartDetail />} />

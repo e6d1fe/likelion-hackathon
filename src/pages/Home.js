@@ -135,7 +135,7 @@ function Home() {
   const navigate = useNavigate();
 
   function toNextPage() {
-    navigate("/instructions");
+    navigate("/instructions1");
   }
 
   return (

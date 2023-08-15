@@ -28,15 +28,32 @@ const InstructText = styled.div`
   width: 300px;
   height: 400px;
   border-radius: 10px;
-  font-size: 19px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 600;
   color: #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  line-height: 120%;
+  line-height: 140%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+`;
+
+const OptionText = styled.div`
+  background-color: #f9e45f;
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 140%;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
@@ -55,31 +72,36 @@ const NextPage = styled.button`
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 
-const Red = styled.p`
-  display: block;
-  color: red;
-  font-size: 35px;
-  font-weight: 600;
-`;
-
-function Instructions2() {
+function Instructions1() {
   const navigate = useNavigate();
 
   function toNextPage() {
-    navigate("/selectdepart");
+    navigate("/instructions2");
   }
 
   return (
     <PageContainer>
       <MobileScreen>
         <InstructText>
-          <Red>빨간색 버튼을</Red>
-          <br />잘 따라가 주세요!
+          안녕하세요!
+          <br />
+          코레일 예매 도우미
+          <br />
+          똑독입니다.
+          <br />
+          기차표 예매 연습을 해 볼게요!
+          <br />
+          우선 출발지부터 골라 볼까요?
         </InstructText>
+        <OptionText>
+          예매할 표의 조건은
+          <br />
+          화면 아래에서 확인할 수 있어요!
+        </OptionText>
         <NextPage onClick={toNextPage}>다음</NextPage>
       </MobileScreen>
     </PageContainer>
   );
 }
 
-export default Instructions2;
+export default Instructions1;
