@@ -2,33 +2,25 @@ import { styled } from "styled-components";
 
 import { useNavigate } from "react-router-dom";
 
-import ServiceHeader from "../components/ServiceHeader";
-
 const PageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 100%;
+  height: 100dvh;
   background-color: #f8f8f8;
 `;
 
 const MobileScreen = styled.div`
   width: 360px;
   height: 100%;
-  position: relative;
-`;
-
-const Container = styled.div`
-  width: 100%;
-  height: 665px;
+  background-color: #f1f1f1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
-  background-color: #f1f1f1;
+  justify-content: center;
+  gap: 21px;
 `;
 
 const InstructText = styled.div`
@@ -74,20 +66,17 @@ function Instructions() {
   const navigate = useNavigate();
 
   function toNextPage() {
-    navigate("/");
+    navigate("/selectdepart");
   }
 
   return (
     <PageContainer>
       <MobileScreen>
-        <ServiceHeader />
-        <Container>
-          <InstructText>
-            <Red>빨간색 버튼을</Red>
-            <br />잘 따라가 주세요!
-          </InstructText>
-          <NextPage onClick={toNextPage}>다음</NextPage>
-        </Container>
+        <InstructText>
+          <Red>빨간색 버튼을</Red>
+          <br />잘 따라가 주세요!
+        </InstructText>
+        <NextPage onClick={toNextPage}>다음</NextPage>
       </MobileScreen>
     </PageContainer>
   );
