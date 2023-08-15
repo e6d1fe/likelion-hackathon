@@ -7,6 +7,7 @@ import ServiceHeader from "../components/ServiceHeader";
 import FromTo from "../components/FromTo";
 import CheckRidesHeader from "../components/CheckRidesHeader";
 import RideOption from "../components/RideOption";
+import InstructionFooter from "../components/InstructionFooter";
 
 const PageContainer = styled.div`
   display: flex;
@@ -105,10 +106,13 @@ const Book = styled.div`
 function SelectRides() {
   const [selected, setSelected] = useState(false);
 
+  const [text, setText] = useState("5% 적립");
+
   const navigate = useNavigate();
 
   function select() {
     setSelected(true);
+    setText("선택 완료");
   }
 
   function toNextPage() {
@@ -223,7 +227,7 @@ function SelectRides() {
           </RideText>
           <PriceBox onClick={select} style={{ backgroundColor: "red" }}>
             <Price style={{ color: "yellow" }}>23,700원</Price>
-            <Mileage style={{ color: "white" }}>5% 적립</Mileage>
+            <Mileage style={{ color: "white" }}>{text}</Mileage>
           </PriceBox>
           <PriceBox>
             <Price>33,200원</Price>
@@ -305,7 +309,10 @@ function SelectRides() {
             <Mileage>5% 적립</Mileage>
           </PriceBox>
         </RideContainer>
-        <Book onClick={toNextPage}>예매</Book>
+        <div style={{ paddingBottom: "90px" }}>
+          <Book onClick={toNextPage}>예매</Book>
+        </div>
+        <InstructionFooter />
       </MobileScreen>
     </PageContainer>
   );
