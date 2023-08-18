@@ -138,7 +138,7 @@ function SelectPassengersDetail() {
   }
 
   function wrongClick(event) {
-    if (event.target.id !== "required") {
+    if (event.target.id !== "required" && event.target.parentElement.id !== "required") {
       alert("이 버튼이 아니에요!");
     }
   }
@@ -182,9 +182,15 @@ function SelectPassengersDetail() {
           <SelectContainer>
             <SelectOption>경로 (만 65세 이상)</SelectOption>
             <SelectFunction>
-              <SelectButton onClick={minusOne} id="required">-</SelectButton>
+              <SelectButton onClick={minusOne} id="required">
+                -
+              </SelectButton>
               <SelectQuantity>{people}</SelectQuantity>
-              <SelectButton onClick={plusOne} id="required"style={{ backgroundColor: "red", color: "white" }}>
+              <SelectButton
+                onClick={plusOne}
+                id="required"
+                style={{ backgroundColor: "red", color: "white" }}
+              >
                 +
               </SelectButton>
             </SelectFunction>
@@ -215,7 +221,9 @@ function SelectPassengersDetail() {
         <DetailOption />
         <CheckRidesContainer>
           <RegisterPayment>간편구매 등록</RegisterPayment>
-          <CheckRides onClick={toNextPage} id="required">열차 조회하기</CheckRides>
+          <CheckRides onClick={toNextPage} id="required">
+            열차 조회하기
+          </CheckRides>
         </CheckRidesContainer>
         <InstructionFooter />
       </MobileScreen>
