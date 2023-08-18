@@ -148,9 +148,15 @@ function SelectDate() {
     navigate("/selectdatedetail");
   }
 
+  function wrongClick(event) {
+    if (event.target.id !== "required") {
+      alert("이 버튼이 아니에요!");
+    }
+  }
+
   return (
     <PageContainer>
-      <MobileScreen>
+      <MobileScreen onClick={wrongClick}>
         <ServiceHeader />
         <ReservationHeader />
         <OneWayHeader />
@@ -170,9 +176,7 @@ function SelectDate() {
           <Map>KTX역 선택 지도</Map>
 
           <InformChooseContainer
-            style={{ backgroundColor: "red", color: "white" }}
-            onClick={toNextPage}
-          >
+            style={{ backgroundColor: "red", color: "white" }} onClick={toNextPage} id="required">
             <Information style={{ color: "white" }}>출발일</Information>
             <Choose style={{ color: "white" }}>2023년 7월 23일 (일) 21:43</Choose>
             <img src={whitedownarrow} width="14" height="4" alt="icon" />

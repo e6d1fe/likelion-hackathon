@@ -223,10 +223,7 @@ function SelectPassengers() {
 
             <DateContainer>
               <Date>23</Date>
-              <Date style={{ color: "white", backgroundColor: "#0066B4" }}>
-                24
-                <span>출발일</span>
-              </Date>
+              <Date style={{ color: "white", backgroundColor: "#0066B4" }}>24</Date>
               <Date>25</Date>
               <Date>26</Date>
               <Date>27</Date>
