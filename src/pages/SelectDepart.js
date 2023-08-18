@@ -153,9 +153,15 @@ function SelectDepart() {
     navigate("/selectdepartdetail");
   }
 
+  function wrongClick(event) {
+    if (event.target.id !== "required" && event.target.parentElement.id !== "required") {
+      alert("이 버튼이 아니에요!");
+    }
+  }
+
   return (
     <PageContainer>
-      <MobileScreen>
+      <MobileScreen onClick={wrongClick}>
         <ServiceHeader />
         <ReservationHeader />
         <OneWayHeader />
@@ -171,6 +177,7 @@ function SelectDepart() {
               style={{ backgroundColor: "red", color: "white" }}
               type="button"
               onClick={toNextPage}
+              id="required"
             >
               용산
             </DepartDesButton>
