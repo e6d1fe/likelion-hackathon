@@ -15,17 +15,19 @@ const Container = styled.div`
   position: relative;
 `;
 
+const ImageContainer = styled.div`
+  position: absolute;
+  top: 14px;
+  right: 19px;
+`;
+
 function ReservationHeader() {
   return (
     <Container>
       승차권 예매
-      <img
-        src={hamburgermenu}
-        width="15"
-        height="14"
-        alt="icon"
-        style={{ position: "fixed", top: "70px", right: "19px" }}
-      />
+      <ImageContainer>
+        <img src={hamburgermenu} width="15" height="14" alt="icon" />
+      </ImageContainer>
     </Container>
   );
 }
