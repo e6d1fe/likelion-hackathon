@@ -196,9 +196,15 @@ function SelectPassengers() {
     navigate("/selectpassengersdetail");
   }
 
+  function wrongClick(event) {
+    if (event.target.id !== "required") {
+      alert("이 버튼이 아니에요!");
+    }
+  }
+
   return (
     <PageContainer>
-      <MobileScreen>
+      <MobileScreen onClick={wrongClick}>
         <ServiceHeader />
         <ReservationHeader />
         <OneWayHeader />
@@ -247,10 +253,10 @@ function SelectPassengers() {
 
           <InformChooseContainer
             style={{ backgroundColor: "red", color: "white" }}
-            onClick={toNextPage}
+            onClick={toNextPage} id="required"
           >
-            <Information style={{ color: "white" }}>승객 연령 및 좌석수</Information>
-            <Choose style={{ color: "white" }}>경로 총 1명</Choose>
+            <Information id="required" style={{ color: "white" }}>승객 연령 및 좌석수</Information>
+            <Choose id="required" style={{ color: "white" }}>경로 총 1명</Choose>
             <img src={whitebottomchevron} width="14" height="5" alt="icon" />
           </InformChooseContainer>
 

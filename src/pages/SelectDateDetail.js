@@ -216,9 +216,15 @@ function SelectDateDetail() {
     }
   }
 
+  function wrongClick(event) {
+    if (event.target.id !== "required") {
+      alert("이 버튼이 아니에요!");
+    }
+  }
+
   return (
     <PageContainer>
-      <MobileScreen>
+      <MobileScreen onClick={wrongClick}>
         <ServiceHeader />
         <ReservationHeader />
         <OneWayHeader />
@@ -243,7 +249,7 @@ function SelectDateDetail() {
 
             <DateContainer>
               <Date>23</Date>
-              <Date onClick={daySelected} style={{ color: "white", backgroundColor: "red" }}>
+              <Date onClick={daySelected} id="required"style={{ color: "white", backgroundColor: "red" }}>
                 {dayText}
               </Date>
               <Date>25</Date>
@@ -257,7 +263,7 @@ function SelectDateDetail() {
             <TimeContainer>
               <Time>16시</Time>
               <Time>17시</Time>
-              <Time onClick={timeSelected} style={{ color: "white", backgroundColor: "red" }}>
+              <Time onClick={timeSelected} id="required" style={{ color: "white", backgroundColor: "red" }}>
                 {timeText}
               </Time>
               <Time>19시</Time>
@@ -286,7 +292,7 @@ function SelectDateDetail() {
           <Divider></Divider>
         </Container>
         <div style={{ paddingBottom: "90px" }}>
-          <NextButton onClick={toNextPage}>다음</NextButton>
+          <NextButton onClick={toNextPage} id="required">다음</NextButton>
         </div>
         <InstructionFooter />
       </MobileScreen>

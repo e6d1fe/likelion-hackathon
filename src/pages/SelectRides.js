@@ -120,9 +120,17 @@ function SelectRides() {
       navigate("/complete");
     }
   }
+
+  function wrongClick(event) {
+    if (event.target.id !== "required") {
+      alert("이 버튼이 아니에요!");
+    }
+  }
+
+
   return (
     <PageContainer>
-      <MobileScreen>
+      <MobileScreen onClick={wrongClick}>
         <ServiceHeader />
         <CheckRidesHeader />
         <FromTo />
@@ -225,9 +233,9 @@ function SelectRides() {
             <br />
             대전
           </RideText>
-          <PriceBox onClick={select} style={{ backgroundColor: "red" }}>
-            <Price style={{ color: "yellow" }}>23,700원</Price>
-            <Mileage style={{ color: "white" }}>{text}</Mileage>
+          <PriceBox onClick={select} id="required" style={{ backgroundColor: "red" }}>
+            <Price id="required" style={{ color: "yellow" }}>23,700원</Price>
+            <Mileage id="required" style={{ color: "white" }}>{text}</Mileage>
           </PriceBox>
           <PriceBox>
             <Price>33,200원</Price>
@@ -310,7 +318,7 @@ function SelectRides() {
           </PriceBox>
         </RideContainer>
         <div style={{ paddingBottom: "90px" }}>
-          <Book onClick={toNextPage}>예매</Book>
+          <Book onClick={toNextPage} id="required"d>예매</Book>
         </div>
         <InstructionFooter />
       </MobileScreen>
