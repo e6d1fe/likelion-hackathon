@@ -218,9 +218,9 @@ function SelectDepartDetail() {
   const navigate = useNavigate();
 
   function select() {
-    setSelected(true);
-    setText("서울 선택 완료");
-    setDepartText("서울");
+    setSelected((previous) => !previous);
+    setText(!selected ? "서울 선택 완료" : "서울");
+    setDepartText(!selected ? "서울" : "용산");
   }
 
   function toNextPage() {
@@ -229,9 +229,15 @@ function SelectDepartDetail() {
     }
   }
 
+  function wrongClick(event) {
+    if (event.target.id !== "required") {
+      alert("이 버튼이 아니에요!");
+    }
+  }
+
   return (
     <PageContainer>
-      <MobileScreen>
+      <MobileScreen onClick={wrongClick}>
         <ServiceHeader />
         <ReservationHeader />
         <Container>
@@ -286,7 +292,7 @@ function SelectDepartDetail() {
           </SortStationBox>
 
           <StationNameContainer>
-            <StationName style={{ backgroundColor: "red" }} onClick={select}>
+            <StationName style={{ backgroundColor: "red" }} onClick={select} id="required">
               <StationNameText style={{ color: "white" }}>{text}</StationNameText>
             </StationName>
             <StationName>
@@ -332,7 +338,9 @@ function SelectDepartDetail() {
           <SearchFirstText src={searchfirsta} width="24" height="462" alt="검색" />
         </Container>
         <div style={{ paddingBottom: "90px" }}>
-          <NextButton onClick={toNextPage}>다음</NextButton>
+          <NextButton onClick={toNextPage} id="required">
+            다음
+          </NextButton>
         </div>
         <InstructionFooter />
       </MobileScreen>
