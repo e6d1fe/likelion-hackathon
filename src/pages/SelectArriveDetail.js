@@ -230,7 +230,7 @@ function SelectArriveDetail() {
   }
 
   function wrongClick(event) {
-    if (event.target.id !== "required") {
+    if (event.target.id !== "required" && event.target.parentElement.id !== "required") {
       alert("이 버튼이 아니에요!");
     }
   }

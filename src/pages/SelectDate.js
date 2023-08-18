@@ -79,6 +79,7 @@ const DepartDesButton = styled.div`
   color: #023d6a;
   padding: 11px;
 `;
+
 const ArriveDes = styled.div`
   display: flex;
   justify-content: center;
@@ -148,8 +149,12 @@ function SelectDate() {
     navigate("/selectdatedetail");
   }
 
+  function toNextPage(event) {
+    console.log(event.target.id);
+  }
+
   function wrongClick(event) {
-    if (event.target.id !== "required") {
+    if (event.target.id !== "required" && event.target.parentElement.id !== "required") {
       alert("이 버튼이 아니에요!");
     }
   }
@@ -176,9 +181,16 @@ function SelectDate() {
           <Map>KTX역 선택 지도</Map>
 
           <InformChooseContainer
-            style={{ backgroundColor: "red", color: "white" }} onClick={toNextPage} id="required">
-            <Information id="required"style={{ color: "white" }}>출발일</Information>
-            <Choose id="required"style={{ color: "white" }}>2023년 7월 23일 (일) 21:43</Choose>
+            style={{ backgroundColor: "red", color: "white" }}
+            onClick={toNextPage}
+            id="required"
+          >
+            <Information id="required" style={{ color: "white" }}>
+              출발일
+            </Information>
+            <Choose id="required" style={{ color: "white" }}>
+              2023년 7월 23일 (일) 21:43
+            </Choose>
             <img src={whitedownarrow} width="14" height="4" alt="icon" />
           </InformChooseContainer>
 

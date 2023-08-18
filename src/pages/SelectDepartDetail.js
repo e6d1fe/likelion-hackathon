@@ -217,7 +217,7 @@ function SelectDepartDetail() {
 
   const navigate = useNavigate();
 
-  function select() {
+  function select(event) {
     setSelected((previous) => !previous);
     setText(!selected ? "서울 선택 완료" : "서울");
     setDepartText(!selected ? "서울" : "용산");
@@ -230,7 +230,7 @@ function SelectDepartDetail() {
   }
 
   function wrongClick(event) {
-    if (event.target.id !== "required") {
+    if (event.target.id !== "required" && event.target.parentElement.id !== "required") {
       alert("이 버튼이 아니에요!");
     }
   }
