@@ -153,9 +153,15 @@ function SelectArrive() {
     navigate("/selectarrivedetail");
   }
 
+  function wrongClick(event) {
+    if (event.target.id !== "required" && event.target.parentElement.id !== "required") {
+      alert("이 버튼이 아니에요!");
+    }
+  }
+
   return (
     <PageContainer>
-      <MobileScreen>
+      <MobileScreen onClick={wrongClick}>
         <ServiceHeader />
         <ReservationHeader />
         <OneWayHeader />
@@ -169,7 +175,11 @@ function SelectArrive() {
           <DepartArriveButtonContainer>
             <DepartDesButton type="button">서울</DepartDesButton>
             <img src={arrowleft} width="11" alt="화살표" />
-            <ArriveDes style={{ backgroundColor: "red", color: "white" }} onClick={toNextPage}>
+            <ArriveDes
+              style={{ backgroundColor: "red", color: "white" }}
+              onClick={toNextPage}
+              id="required"
+            >
               강릉
             </ArriveDes>
           </DepartArriveButtonContainer>
