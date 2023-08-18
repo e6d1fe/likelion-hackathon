@@ -149,10 +149,6 @@ function SelectDate() {
     navigate("/selectdatedetail");
   }
 
-  function toNextPage(event) {
-    console.log(event.target.id);
-  }
-
   function wrongClick(event) {
     if (event.target.id !== "required" && event.target.parentElement.id !== "required") {
       alert("이 버튼이 아니에요!");
