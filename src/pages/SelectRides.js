@@ -25,13 +25,6 @@ const MobileScreen = styled.div`
   position: relative;
 `;
 
-const Container = styled.div`
-  width: 100%;
-  height: 0px;
-  background-color: #f1f1f1;
-  margin-top: 90px;
-`;
-
 const CategoriesContainer = styled.div`
   background-color: #d4d4d4;
   display: flex;
@@ -111,8 +104,8 @@ function SelectRides() {
   const navigate = useNavigate();
 
   function select() {
-    setSelected(true);
-    setText("선택 완료");
+    setSelected((previous) => !previous);
+    setText(!selected ? "선택 완료" : "5% 적립");
   }
 
   function toNextPage() {
@@ -122,11 +115,10 @@ function SelectRides() {
   }
 
   function wrongClick(event) {
-    if (event.target.id !== "required") {
+    if (event.target.id !== "required" && event.target.parentElement.id !== "required") {
       alert("이 버튼이 아니에요!");
     }
   }
-
 
   return (
     <PageContainer>
@@ -234,8 +226,8 @@ function SelectRides() {
             대전
           </RideText>
           <PriceBox onClick={select} id="required" style={{ backgroundColor: "red" }}>
-            <Price id="required" style={{ color: "yellow" }}>23,700원</Price>
-            <Mileage id="required" style={{ color: "white" }}>{text}</Mileage>
+            <Price style={{ color: "yellow" }}>23,700원</Price>
+            <Mileage style={{ color: "white" }}>{text}</Mileage>
           </PriceBox>
           <PriceBox>
             <Price>33,200원</Price>
@@ -318,7 +310,9 @@ function SelectRides() {
           </PriceBox>
         </RideContainer>
         <div style={{ paddingBottom: "90px" }}>
-          <Book onClick={toNextPage} id="required"d>예매</Book>
+          <Book onClick={toNextPage} id="required">
+            예매
+          </Book>
         </div>
         <InstructionFooter />
       </MobileScreen>
