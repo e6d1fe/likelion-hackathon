@@ -213,14 +213,14 @@ function SelectArriveDetail() {
 
   const [text, setText] = useState("대전");
 
-  const [arriveText, setArriveText] = useState("강릉")
-  
+  const [arriveText, setArriveText] = useState("강릉");
+
   const navigate = useNavigate();
 
   function select() {
-    setSelected(true);
-    setText("대전 선택 완료");
-    setArriveText("대전");
+    setSelected((previous) => !previous);
+    setText(!selected ? "대전 선택 완료" : "대전");
+    setArriveText(!selected ? "대전" : "강릉");
   }
 
   function toNextPage() {
@@ -229,9 +229,15 @@ function SelectArriveDetail() {
     }
   }
 
+  function wrongClick(event) {
+    if (event.target.id !== "required") {
+      alert("이 버튼이 아니에요!");
+    }
+  }
+
   return (
     <PageContainer>
-      <MobileScreen>
+      <MobileScreen onClick={wrongClick}>
         <ServiceHeader />
         <ReservationHeader />
         <Container>
@@ -312,8 +318,8 @@ function SelectArriveDetail() {
             </StationName>
           </StationNameContainer>
 
-          <StationNameContainer onClick={select}>
-            <StationName style={{ backgroundColor: "red" }}>
+          <StationNameContainer>
+            <StationName style={{ backgroundColor: "red" }} onClick={select} id="required">
               <StationNameText style={{ color: "white" }}>{text}</StationNameText>
             </StationName>
             <StationName>
@@ -332,7 +338,9 @@ function SelectArriveDetail() {
           <SearchFirstText src={searchfirsta} width="24" height="462" alt="검색" />
         </Container>
         <div style={{ paddingBottom: "90px" }}>
-          <NextButton onClick={toNextPage}>다음</NextButton>
+          <NextButton onClick={toNextPage} id="required">
+            다음
+          </NextButton>
         </div>
         <InstructionFooter />
       </MobileScreen>
