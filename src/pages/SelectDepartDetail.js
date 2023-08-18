@@ -213,11 +213,14 @@ function SelectDepartDetail() {
 
   const [text, setText] = useState("서울");
 
+  const [departText, setDepartText] = useState("용산");
+
   const navigate = useNavigate();
 
   function select() {
     setSelected(true);
     setText("서울 선택 완료");
+    setDepartText("서울");
   }
 
   function toNextPage() {
@@ -239,7 +242,7 @@ function SelectDepartDetail() {
           </DepartArriveContainer>
 
           <DepartArriveButtonContainer>
-            <DepartDesButton type="button">용산</DepartDesButton>
+            <DepartDesButton type="button">{departText}</DepartDesButton>
             <img src={arrowleft} width="11" alt="화살표" />
             <ArriveDes>강릉</ArriveDes>
           </DepartArriveButtonContainer>
@@ -282,8 +285,8 @@ function SelectDepartDetail() {
             <SortStation>주요역</SortStation>
           </SortStationBox>
 
-          <StationNameContainer onClick={select}>
-            <StationName style={{ backgroundColor: "red" }}>
+          <StationNameContainer>
+            <StationName style={{ backgroundColor: "red" }} onClick={select}>
               <StationNameText style={{ color: "white" }}>{text}</StationNameText>
             </StationName>
             <StationName>
