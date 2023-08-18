@@ -167,7 +167,7 @@ function SelectArrive() {
           </DepartArriveContainer>
 
           <DepartArriveButtonContainer>
-            <DepartDesButton type="button">용산</DepartDesButton>
+            <DepartDesButton type="button">서울</DepartDesButton>
             <img src={arrowleft} width="11" alt="화살표" />
             <ArriveDes style={{ backgroundColor: "red", color: "white" }} onClick={toNextPage}>
               강릉
