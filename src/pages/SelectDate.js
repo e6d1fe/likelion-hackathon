@@ -162,9 +162,9 @@ function SelectDate() {
           </DepartArriveContainer>
 
           <DepartArriveButtonContainer>
-            <DepartDesButton type="button">용산</DepartDesButton>
+            <DepartDesButton type="button">서울</DepartDesButton>
             <img src={arrowleft} width="11" alt="화살표" />
-            <ArriveDes>강릉</ArriveDes>
+            <ArriveDes>대전</ArriveDes>
           </DepartArriveButtonContainer>
 
           <Map>KTX역 선택 지도</Map>

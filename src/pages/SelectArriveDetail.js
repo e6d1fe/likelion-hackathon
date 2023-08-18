@@ -213,11 +213,14 @@ function SelectArriveDetail() {
 
   const [text, setText] = useState("대전");
 
+  const [arriveText, setArriveText] = useState("강릉")
+  
   const navigate = useNavigate();
 
   function select() {
     setSelected(true);
     setText("대전 선택 완료");
+    setArriveText("대전");
   }
 
   function toNextPage() {
@@ -239,9 +242,9 @@ function SelectArriveDetail() {
           </DepartArriveContainer>
 
           <DepartArriveButtonContainer>
-            <DepartDesButton type="button">용산</DepartDesButton>
+            <DepartDesButton>서울</DepartDesButton>
             <img src={arrowleft} width="11" alt="화살표" />
-            <ArriveDes>강릉</ArriveDes>
+            <ArriveDes type="button">{arriveText}</ArriveDes>
           </DepartArriveButtonContainer>
 
           <SearchContainer>
