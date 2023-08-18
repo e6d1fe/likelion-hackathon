@@ -320,7 +320,7 @@ function SelectArriveDetail() {
 
           <StationNameContainer>
             <StationName style={{ backgroundColor: "red" }} onClick={select} id="required">
-              <StationNameText style={{ color: "white" }}>{text}</StationNameText>
+              <StationNameText id="required" style={{ color: "white" }}>{text}</StationNameText>
             </StationName>
             <StationName>
               <StationNameText>천안</StationNameText>
